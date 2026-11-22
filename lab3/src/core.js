@@ -38,6 +38,7 @@ function recSumTo(n) {
  * @param {*} n
  */
 function factorial(n) {
+  if (n < 0) throw new RangeError('n must be >= 0');
   let f = 1;
   for (let i = 2; i <= n; i++) f *= i;
   return f;
@@ -56,6 +57,7 @@ function isBinary(n) {
  * @param {*} n
  */
 function fibonacci(n) {
+  if (n < 0) throw new RangeError('n must be >= 0');
   let a = 0, b = 1;
   for (let i = 0; i < n; i++) [a, b] = [b, a + b];
   return a;
@@ -127,12 +129,16 @@ function sequence(start = 0, step = 1) {
  * deepEqual({arr: [22, 33], text: 'text'}, {arr: [22, 3], text: 'text2'}) // false
  */
 function deepEqual(a, b) {
-  if (a === b || (Number.isNaN(a) && Number.isNaN(b))) return true;
+  if (Object.is(a, b)) return true;
+
   if (typeof a !== 'object' || typeof b !== 'object' || a === null || b === null) return false;
+
   const keysA = Object.keys(a);
   const keysB = Object.keys(b);
+
   if (keysA.length !== keysB.length) return false;
-  return keysA.every((key) => deepEqual(a[key], b[key]));
+
+  return keysA.every((key) => Object.prototype.hasOwnProperty.call(b, key) && deepEqual(a[key], b[key]));
 }
 
 module.exports = {

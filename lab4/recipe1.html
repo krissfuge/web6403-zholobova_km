@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Книга рецептов</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="book">
+        <div class="page page--left recipe">
+            <h2>Торт</h2>
+
+            <div class="recipe__top">
+                <img src="images/сake.png" alt="Торт" class="recipe__photo">
+                <table class="recipe-table">
+                    <tr>
+                        <th class="recipe-table__head recipe-table__head--left">Ингредиент</th>
+                        <th class="recipe-table__head recipe-table__head--center">Кол-во</th>
+                        <th class="recipe-table__head recipe-table__head--center">Готово</th>
+                    </tr>
+                    <tr>
+                        <td class="recipe-table__cell recipe-table__cell--left">Ведро молока</td>
+                        <td class="recipe-table__cell recipe-table__cell--center">3</td>
+                        <td class="recipe-table__cell recipe-table__cell--center">
+                            <input class="recipe-table__checkbox" type="checkbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="recipe-table__cell recipe-table__cell--left">Сахар</td>
+                        <td class="recipe-table__cell recipe-table__cell--center">2</td>
+                        <td class="recipe-table__cell recipe-table__cell--center">
+                            <input class="recipe-table__checkbox" type="checkbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="recipe-table__cell recipe-table__cell--left">Любое яйцо</td>
+                        <td class="recipe-table__cell recipe-table__cell--center">1</td>
+                        <td class="recipe-table__cell recipe-table__cell--center">
+                            <input class="recipe-table__checkbox" type="checkbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="recipe-table__cell recipe-table__cell--left">Пшеница</td>
+                        <td class="recipe-table__cell recipe-table__cell--center">3</td>
+                        <td class="recipe-table__cell recipe-table__cell--center">
+                            <input class="recipe-table__checkbox" type="checkbox">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>Приготовление:</h3>
+            <ol>
+                <li>Отыскать верстак и закинуть все ингридиенты</li>
+                <li>Верхний ряд: три молока</li>
+                <li>Средний ряд: сахар, яйцо, сахар</li>
+                <li>Нижний ряд: три пшеницы</li>
+            </ol>
+
+            <a href="contents.html" class="corner corner--left"></a>
+        </div>
+
+        <div class="page page--right page--notes">
+            <h2>Заметки</h2>
+
+            <div class="notes" id="notes">
+                <p class="notes__item">После крафта ведра с молоком заменятся на пустые ведра и останутся в верстаке.</p>
+                <p class="notes__item">Каждый кусочек восстанавливает 2 единицы голода. Торт не съедается целиком, как обычная еда! Нужно поставить торт на стол, затем повзаимодействовать с ним вместе с друзьями – так каждый получит свой кусочек.</p>
+                <p class="notes__item">В торт можно поставить свечи, чтобы поздравить кого-то с Днем Рождения :3</p>
+                <p class="notes__item">Некоторые панды могут подойти к выпавшему торту, подобрать его и съесть.</p>
+            </div>
+
+            <form class="note-form" id="note-form">
+                <div class="note-form__board">
+                    <!--h3 class="note-form__title">Новая заметка</!--h3>-->
+
+                    <label class="note-form__label" for="note-name">Назовитесь</label>
+                    <input class="note-form__input" type="text" id="note-name" required>
+
+                    <label class="note-form__label" for="note-text">Введите заметку</label>
+                    <textarea class="note-form__textarea" id="note-text" rows="3" required></textarea>
+
+                    <label class="note-form__agree">
+                        <input class="note-form__checkbox" type="checkbox" id="note-agree" required>
+                        Разместить
+                    </label>
+                </div>
+
+                <button class="note-form__button" type="submit">Отправить</button>
+            </form>
+
+            <a href="recipe2.html" class="corner corner--right"></a>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</body>
+</html>
